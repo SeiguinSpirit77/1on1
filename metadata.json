@@ -1,0 +1,6 @@
+{
+  "name": "IMPERIUM",
+  "description": "Luksusowe, systemowe doradztwo i mentoring sylwetkowy 1:1 dla przedsiębiorców oraz kadry zarządzającej. Optymalizacja treningu, regeneracji, stylu życia i odżywiania.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

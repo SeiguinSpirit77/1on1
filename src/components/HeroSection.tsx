@@ -21,8 +21,15 @@ import {
 import { motion, AnimatePresence } from 'motion/react';
 
 const CloudDivider = ({ flipped = false, className = "" }: { flipped?: boolean; className?: string }) => {
+  const maskStyle = {
+    WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 35%, black 65%, transparent 100%)',
+    maskImage: 'linear-gradient(to bottom, transparent 0%, black 35%, black 65%, transparent 100%)',
+  };
   return (
-    <div className={`relative w-full h-16 sm:h-24 md:h-28 overflow-hidden pointer-events-none select-none z-35 ${className}`}>
+    <div
+      className={`relative w-full h-16 sm:h-24 md:h-28 overflow-hidden pointer-events-none select-none z-35 ${className}`}
+      style={maskStyle}
+    >
       <img
         src="/src/assets/images/sekcje_chmury_1779527144416.png"
         alt="Przejście chmurowe"

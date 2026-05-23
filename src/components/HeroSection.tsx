@@ -22,13 +22,63 @@ import { motion, AnimatePresence } from 'motion/react';
 
 const CloudDivider = ({ flipped = false, className = "" }: { flipped?: boolean; className?: string }) => {
   return (
-    <div className={`relative w-full h-16 sm:h-24 md:h-28 overflow-hidden pointer-events-none select-none z-35 ${className}`}>
-      <img
-        src="/src/assets/images/sekcje_chmury_1779527144416.png"
-        alt="Przejście chmurowe"
-        className={`w-full h-full object-cover opacity-85 mix-blend-screen ${flipped ? 'rotate-180' : ''}`}
-        referrerPolicy="no-referrer"
-      />
+    <div 
+      className={`relative w-full h-24 sm:h-32 md:h-36 pointer-events-none select-none z-40 ${className}`}
+      style={{
+        maskImage: 'linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%)',
+        WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%)'
+      }}
+    >
+      {/* Stereoscopic Depth Level 1: Deep Slow-Drifting Clouds */}
+      <motion.div
+        className="absolute inset-0 w-full h-full"
+        animate={{
+          x: ["-2%", "2%"],
+        }}
+        transition={{
+          duration: 25,
+          repeat: Infinity,
+          repeatType: "reverse",
+          ease: "easeInOut"
+        }}
+      >
+        <img
+          src="/src/assets/images/sekcje_chmury_1779527144416.png"
+          alt="Głębokie chmury"
+          className={`w-[160%] h-full object-fill opacity-45 mix-blend-screen absolute left-[-30%] ${flipped ? 'rotate-180' : ''}`}
+          referrerPolicy="no-referrer"
+        />
+      </motion.div>
+
+      {/* Stereoscopic Depth Level 2: Foreground Billowing Clouds protruding and floating */}
+      <motion.div
+        className="absolute inset-0 w-full h-full"
+        animate={{
+          y: [-5, 5],
+          x: ["1%", "-1%"],
+        }}
+        transition={{
+          y: {
+            duration: 7,
+            repeat: Infinity,
+            repeatType: "reverse",
+            ease: "easeInOut"
+          },
+          x: {
+            duration: 18,
+            repeat: Infinity,
+            repeatType: "reverse",
+            ease: "easeInOut"
+          }
+        }}
+      >
+        <img
+          src="/src/assets/images/sekcje_chmury_1779527144416.png"
+          alt="Chmury pierwszego planu"
+          className={`w-[160%] h-[120%] object-fill opacity-85 mix-blend-screen absolute -top-[10%] left-[-30%] filter blur-[0.3px] ${flipped ? 'rotate-180' : ''}`}
+          referrerPolicy="no-referrer"
+        />
+      </motion.div>
     </div>
   );
 };

@@ -19,69 +19,7 @@ import {
   Users
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
-
-const CloudDivider = ({ flipped = false, className = "" }: { flipped?: boolean; className?: string }) => {
-  return (
-    <div 
-      className={`relative w-full h-24 sm:h-32 md:h-36 pointer-events-none select-none z-40 ${className}`}
-      style={{
-        maskImage: 'linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%)',
-        WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%)'
-      }}
-    >
-      {/* Stereoscopic Depth Level 1: Deep Slow-Drifting Clouds */}
-      <motion.div
-        className="absolute inset-0 w-full h-full"
-        animate={{
-          x: ["-2%", "2%"],
-        }}
-        transition={{
-          duration: 25,
-          repeat: Infinity,
-          repeatType: "reverse",
-          ease: "easeInOut"
-        }}
-      >
-        <img
-          src="/src/assets/images/sekcje_chmury_1779527144416.png"
-          alt="Głębokie chmury"
-          className={`w-[160%] h-full object-fill opacity-45 mix-blend-screen absolute left-[-30%] ${flipped ? 'rotate-180' : ''}`}
-          referrerPolicy="no-referrer"
-        />
-      </motion.div>
-
-      {/* Stereoscopic Depth Level 2: Foreground Billowing Clouds protruding and floating */}
-      <motion.div
-        className="absolute inset-0 w-full h-full"
-        animate={{
-          y: [-5, 5],
-          x: ["1%", "-1%"],
-        }}
-        transition={{
-          y: {
-            duration: 7,
-            repeat: Infinity,
-            repeatType: "reverse",
-            ease: "easeInOut"
-          },
-          x: {
-            duration: 18,
-            repeat: Infinity,
-            repeatType: "reverse",
-            ease: "easeInOut"
-          }
-        }}
-      >
-        <img
-          src="/src/assets/images/sekcje_chmury_1779527144416.png"
-          alt="Chmury pierwszego planu"
-          className={`w-[160%] h-[120%] object-fill opacity-85 mix-blend-screen absolute -top-[10%] left-[-30%] filter blur-[0.3px] ${flipped ? 'rotate-180' : ''}`}
-          referrerPolicy="no-referrer"
-        />
-      </motion.div>
-    </div>
-  );
-};
+import CloudDivider from './CloudDivider';
 
 // Classical Transformation Items
 interface Transformation {
@@ -555,7 +493,7 @@ export default function HeroSection() {
         </div>
       </header>
 
-      <CloudDivider className="-my-8 sm:-my-12 relative z-35" />
+      <CloudDivider className="-my-14 sm:-my-20 md:-my-24 relative z-50" />
 
       {/* ===== SECTION 1: DIAGNOZA (PROBLEM) ===== */}
       <section className="bg-[#131210] py-24 sm:py-32 relative z-30" id="poznaj-system">
@@ -625,7 +563,7 @@ export default function HeroSection() {
         </div>
       </section>
 
-      <CloudDivider flipped className="-my-12 sm:-my-16 relative z-35" />
+      <CloudDivider flipped className="-my-16 sm:-my-22 md:-my-28 relative z-50" />
 
       {/* ===== SECTION 2: ZMIANA PARADYGMATU ===== */}
       <section className="py-24 sm:py-32 relative overflow-hidden z-30" id="paradigm">
@@ -671,7 +609,7 @@ export default function HeroSection() {
         </div>
       </section>
 
-      <CloudDivider className="-my-12 sm:-my-16 relative z-35" />
+      <CloudDivider className="-my-16 sm:-my-22 md:-my-28 relative z-50" />
 
       {/* ===== SECTION 3: RDZEŃ SYSTEMU (4 FILARY) ===== */}
       <section className="bg-[#131210]/50 py-24 sm:py-32 relative z-30" id="4-filary">
@@ -864,7 +802,7 @@ export default function HeroSection() {
         </div>
       </section>
 
-      <CloudDivider flipped className="-my-12 sm:-my-16 relative z-35" />
+      <CloudDivider flipped className="-my-16 sm:-my-22 md:-my-28 relative z-50" />
 
       {/* ===== SECTION 4: KTO ZA TYM STOI (AUTORYTET) ===== */}
       <section className="bg-[#131210] py-24 sm:py-32 relative z-30" id="kim-jestem">
@@ -940,7 +878,7 @@ export default function HeroSection() {
         </div>
       </section>
 
-      <CloudDivider className="-my-12 sm:-my-16 relative z-35" />
+      <CloudDivider className="-my-16 sm:-my-22 md:-my-28 relative z-50" />
 
       {/* ===== SECTION 5: ŚCIANA CHWAŁY (TRANSFORMACJE DYNAMICZNE) ===== */}
       <section className="py-24 sm:py-32 relative z-30" id="efekty">
@@ -1151,7 +1089,7 @@ export default function HeroSection() {
         </div>
       </section>
 
-      <CloudDivider flipped className="-my-12 sm:-my-16 relative z-35" />
+      <CloudDivider flipped className="-my-16 sm:-my-22 md:-my-28 relative z-50" />
 
       {/* ===== SECTION 6: AUDIENCJA (SELEKCJA) ===== */}
       <section className="bg-[#131210] py-24 sm:py-32 relative z-30" id="selekcja">
@@ -1231,7 +1169,7 @@ export default function HeroSection() {
         </div>
       </section>
 
-      <CloudDivider className="-my-12 sm:-my-16 relative z-35" />
+      <CloudDivider className="-my-16 sm:-my-22 md:-my-28 relative z-50" />
 
       {/* ===== SECTION 7: COOPERATIVE STEPS ===== */}
       <section className="py-24 sm:py-32 relative z-30" id="proces">
@@ -1264,7 +1202,7 @@ export default function HeroSection() {
         </div>
       </section>
 
-      <CloudDivider flipped className="-my-12 sm:-my-16 relative z-35" />
+      <CloudDivider flipped className="-my-16 sm:-my-22 md:-my-28 relative z-50" />
 
       {/* ===== SECTION 8: FAQ ===== */}
       <section className="bg-[#131210] py-24 sm:py-32 relative z-30" id="faq">
@@ -1307,7 +1245,7 @@ export default function HeroSection() {
         </div>
       </section>
 
-      <CloudDivider className="-my-12 sm:-my-16 relative z-35" />
+      <CloudDivider className="-my-16 sm:-my-22 md:-my-28 relative z-50" />
 
       {/* ===== SECTION 9: FINAL CALL TO ACTION ===== */}
       <section className="py-32 relative text-center z-30 overflow-hidden">
